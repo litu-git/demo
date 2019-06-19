@@ -18,7 +18,7 @@ public class Config {
      */
     public static String getString(String key) {
         // crs_core(resources包下的第一层)/dao(resources包下的第二层)/dao(resources包下的第三层)
-        ResourceBundle rb = ResourceBundle.getBundle("crs_core/dao/dao", new java.util.Locale("zh", "CN"));
+        ResourceBundle rb = ResourceBundle.getBundle("config/config", new java.util.Locale("zh", "CN"));
         return rb.getString(key);
     }
 
