@@ -17,7 +17,8 @@ public class SingletonServiceImpl implements SingletonService {
     private static volatile SingletonServiceImpl instance = null;    //保证 instance 在所有线程中同步
 
     private SingletonServiceImpl() {
-    }    //private 避免类在外部被实例化
+        //private 避免类在外部被实例化
+    }
 
     @Override
     public SingletonServiceImpl getInstance(String type) {
@@ -45,16 +46,17 @@ public class SingletonServiceImpl implements SingletonService {
         return instance;
     }
 
-
     // *****饿汉式单例start*****
     /**
      * 该模式的特点是类一旦加载就创建一个单例，保证在调用 getInstance 方法之前单例已经存在了。
      * 饿汉式单例在类创建的同时就已经创建好一个静态的对象供系统使用，以后不再改变，所以是线程安全的，可以直接用于多线程而不会出现问题。
+     *
      * @Author: litu[li_tu@suixingpay.com]
      * @Date: 9:33 2019/5/29
      **/
-    private static final SingletonServiceImpl hungrySingleton=new SingletonServiceImpl();
-    private static SingletonServiceImpl getInstanceHungrySingleton(){
+    private static final SingletonServiceImpl hungrySingleton = new SingletonServiceImpl();
+
+    private static SingletonServiceImpl getInstanceHungrySingleton() {
         return hungrySingleton;
     }
     // *****饿汉式单例end*****
