@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.utils.Config;
-import com.oracle.tools.packager.Log;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

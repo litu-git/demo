@@ -2,3 +2,6 @@ litu:
     name: 李途
     sex: 男生
     age: 99
+
+server:
+    port : 8092
