@@ -1,11 +1,3 @@
-/**
- * All rights Reserved, Designed By Suixingpay.
- *
- * @author: WangYanChao[wang_yc@suixingpay.com]
- * @date: 2017年4月18日 下午5:16:57
- * @Copyright ©2017 Suixingpay. All rights reserved.
- * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
- */
 package com.example.demo.utils;
 
 import org.springframework.util.StringUtils;
@@ -25,38 +17,73 @@ import java.util.GregorianCalendar;
  **/
 public class DateUtils {
     /**
-     *
+     * 年
      */
-    public static final String YEAR_DATE_FORMAT_STR = "yyyy";
+    public static final String DATE_YYYY = "yyyy";
     /**
-     *
+     * 月
      */
-    public static final String MONTH_DATE_FORMAT_STR = "MM";
+    public static final String DATE_MM = "MM";
     /**
-     *
+     * 日
      */
-    public static final String DAY_DATE_FORMAT_STR = "dd";
+    public static final String DATE_DD = "dd";
     /**
-     *
+     * 年月日
      */
-    public static final String ABBR_SHORT_DATE_FORMAT_STR = "yyyyMMdd";
+    public static final String DATE_YYYYMMDD = "yyyyMMdd";
+    /**
+     * 年-月-日
+     */
+    public static final String YYYY_MM_DD = "yyyy-MM-dd";
+    /**
+     * 年月日时分秒
+     */
+    public static final String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
+    /**
+     * 年-月-日 时:分:秒
+     */
+    public static final String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
+
+    private static final SimpleDateFormat yyyyMMddHHmmss = new SimpleDateFormat("yyyyMMddHHmmss");
+    private static final SimpleDateFormat SDF1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private static final SimpleDateFormat SDF2 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    private static final SimpleDateFormat SDF3 = new SimpleDateFormat("yyyy-MM-dd HH");
+    private static final SimpleDateFormat SDF4 = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat SDF5 = new SimpleDateFormat("yyyy-MM");
+    private static final SimpleDateFormat SDF6 = new SimpleDateFormat("yyyy");
 
     /**
-     * 使用参数Format格式化Date成字符串
+     * 按照参数格式化日期
      *
-     * @return String
+     * @Author: li_tu@suixingpay.com
+     * @Date: 2019-07-13 16:41
+     * @Version: 1.0
+     */
+    public static String formatDateByParam(Date date, String format) {
+        return new SimpleDateFormat(format).format(date);
+    }
+
+    /**
+     * 使用参数pattern格式化Date成字符串
+     *
+     * @Author: li_tu@suixingpay.com
+     * @Date: 2019-07-11 20:40
+     * @Version: 1.0
      */
     public static String format(Date date, String pattern) {
         return date == null ? "" : new SimpleDateFormat(pattern).format(date);
     }
 
     /**
+     * 获取当前时间yyyyMMddHHmmss
+     *
      * @author: litu[li_tu@suixingpay.com]
      * @date: 2018年11月5日 下午2:38:56
      * @version: V1.0
      */
     public static String getCurrentDateTime() {
-        SimpleDateFormat dateTime = new SimpleDateFormat("yyyyMMddHHmmss");
+        SimpleDateFormat dateTime = yyyyMMddHHmmss;
         return dateTime.format(new Date());
     }
 
@@ -83,13 +110,13 @@ public class DateUtils {
             strValue = strValue.substring(0, 19);
         }
         if (strValue.length() == 19) {
-            clsFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            clsFormat = new SimpleDateFormat(YYYY_MM_DD_HH_MM_SS);
         } else if (strValue.length() == 10) {
-            clsFormat = new SimpleDateFormat("yyyy-MM-dd");
+            clsFormat = new SimpleDateFormat(YYYY_MM_DD);
         } else if (strValue.length() == 14) {
-            clsFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+            clsFormat = new SimpleDateFormat(YYYYMMDDHHMMSS);
         } else if (strValue.length() == 8) {
-            clsFormat = new SimpleDateFormat("yyyyMMdd");
+            clsFormat = new SimpleDateFormat(DATE_YYYYMMDD);
         }
 
         ParsePosition pos = new ParsePosition(0);
@@ -556,13 +583,6 @@ public class DateUtils {
      */
     public static final int Y = 6;
 
-    private static final SimpleDateFormat SDF1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    private static final SimpleDateFormat SDF2 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    private static final SimpleDateFormat SDF3 = new SimpleDateFormat("yyyy-MM-dd HH");
-    private static final SimpleDateFormat SDF4 = new SimpleDateFormat("yyyy-MM-dd");
-    private static final SimpleDateFormat SDF5 = new SimpleDateFormat("yyyy-MM");
-    private static final SimpleDateFormat SDF6 = new SimpleDateFormat("yyyy");
-
     /**
      * yyyy-MM-dd HH:mm:ss
      *
@@ -772,7 +792,7 @@ public class DateUtils {
     }
 
     public static String getCurDT() {
-        return toString(new Date(), ABBR_SHORT_DATE_FORMAT_STR);
+        return toString(new Date(), DATE_YYYYMMDD);
     }
 
     /**
