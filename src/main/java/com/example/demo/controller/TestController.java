@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * @author: litu[li_tu@suixingpay.com]
  * @date: 2019/5/16 16:10
@@ -25,6 +29,11 @@ public class TestController {
     public String testHelloWorld(String req) {
         log.info("req:" + req);
         return testService.printString(req);
+    }
+
+    public static void main(String[] args) {
+        HashMap map = new HashMap();
+
     }
 
 }

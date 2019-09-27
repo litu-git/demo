@@ -157,31 +157,29 @@ public class StartApplicationUtil {
      **/
     public static String print4() {
         StringBuilder sb = new StringBuilder();
-        /***
-         *      ┌─┐       ┌─┐
-         *   ┌──┘ ┴───────┘ ┴──┐
-         *   │                 │
-         *   │       ───       │
-         *   │  ─┬┘       └┬─  │
-         *   │                 │
-         *   │       ─┴─       │
-         *   │                 │
-         *   └───┐         ┌───┘
-         *       │         │
-         *       │         │
-         *       │         │
-         *       │         └──────────────┐
-         *       │                        │
-         *       │                        ├─┐
-         *       │                        ┌─┘
-         *       │                        │
-         *       └─┐  ┐  ┌───────┬──┐  ┌──┘
-         *         │ ─┤ ─┤       │ ─┤ ─┤
-         *         └──┴──┘       └──┴──┘
-         *                神兽保佑
-         *               代码无BUG!
-         */
-
+        sb.append("\n");
+        sb.append("      ┌─┐       ┌─┐\n");
+        sb.append("   ┌──┘ ┴───────┘ ┴──┐\n");
+        sb.append("   │                 │\n");
+        sb.append("   │       ───       │\n");
+        sb.append("   │  ─┬┘       └┬─  │\n");
+        sb.append("   │                 │\n");
+        sb.append("   │       ─┴─       │\n");
+        sb.append("   │                 │\n");
+        sb.append("   └───┐         ┌───┘\n");
+        sb.append("       │         │\n");
+        sb.append("       │         │\n");
+        sb.append("       │         │\n");
+        sb.append("       │         └──────────────┐\n");
+        sb.append("       │                        │\n");
+        sb.append("       │                        ├─┐\n");
+        sb.append("       │                        ┌─┘\n");
+        sb.append("       │                        │\n");
+        sb.append("       └─┐  ┐  ┌───────┬──┐  ┌──┘\n");
+        sb.append("         │ ─┤ ─┤       │ ─┤ ─┤\n");
+        sb.append("         └──┴──┘       └──┴──┘\n");
+        sb.append("                神兽保佑\n");
+        sb.append("               代码无BUG!\n");
         return sb.toString();
     }
 
