@@ -445,6 +445,21 @@ public class StartApplicationUtil {
          *   (((__) (__)))    高山仰止,景行行止.虽不能至,心向往之。
          */
 
+        sb.append("\n");
+        sb.append("  .--,       .--,\n");
+        sb.append(" ( (  \\.---./  ) )\n");
+        sb.append("  '.__/o   o\\__.' \n");
+        sb.append("     {=  ^  =}\n");
+        sb.append("      >  -  <\n");
+        sb.append("     /       \\ \n");
+        sb.append("    //       \\\\ \n");
+        sb.append("   //|   .   |\\\\\n");
+        sb.append("   \"'\\       /'\"_.-~^`'-.\n");
+        sb.append("      \\  _  /--'         `\n");
+        sb.append("    ___)( )(___\n");
+        sb.append("   (((__) (__)))  \n");
+        sb.append("\n");
+        sb.append("   鼠年大吉  神鼠克bug\n");
         return sb.toString();
     }
 
